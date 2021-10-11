@@ -1,0 +1,16 @@
+<div class="row ">
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-xs-6 mb-5" *ngFor="let pokemon of pokemons">
+      <div class="bg-white rounded shadow poke-card">
+        <div class="img-hero">
+            <img [src]="pokemon.sprites.other.dream_world.front_default" [alt]="pokemon.name" class="img-fluid card-img-top" (click)="onDetail(pokemon)">
+        </div>
+        <div class="p-4">
+          <h5> <a href="#" class="text-dark">{{pokemon.name | titlecase}}</a></h5>
+          <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+          <div class="d-flex align-items-center justify-content-start rounded-pill bg-white py-2 mt-2">
+            <div class="badge badge-danger p-2 mr-1 rounded-pill font-weight-normal" *ngFor="let type of pokemon.types">{{type.type.name | titlecase}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
