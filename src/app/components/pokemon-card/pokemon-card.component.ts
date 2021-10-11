@@ -15,6 +15,7 @@ export class PokemonCardComponent implements OnInit {
   pokemons: PokemonDetail[] = [];
 
   constructor(private pokemonService: PokemonService) {
+    this.offset = 0;
   }
 
   ngOnInit(): void {
