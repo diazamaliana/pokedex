@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { forkJoin, Observable } from 'rxjs';
 import { PokemonDetail } from 'src/app/models/pokemon-detail';
 import { PokemonList } from 'src/app/models/pokemon-list';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -14,9 +16,10 @@ export class PokemonCardComponent implements OnInit {
 
   pokemons: PokemonDetail[] = [];
 
-  constructor(private pokemonService: PokemonService) {
-    this.offset = 0;
-  }
+  constructor(private pokemonService: PokemonService,
+              private modalDetail: NgbModal) {
+                this.offset = 0;
+              }
 
   ngOnInit(): void {
     this.getPokemonList(this.offset);
@@ -43,6 +46,11 @@ export class PokemonCardComponent implements OnInit {
   }
 
   onDetail(pokemon: PokemonDetail): void {
+    const detailModalRef = this.modalDetail.open(PokemonDetailComponent, 
+      { centered: true,
+        size: 'md',
+    });
+    detailModalRef.componentInstance.pokemon = pokemon;
     console.log(pokemon);
   }
 }

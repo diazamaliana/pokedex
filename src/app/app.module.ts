@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { PokemonComponent } from './pages/pokemon/pokemon.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     HeaderComponent,
     PokemonComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
