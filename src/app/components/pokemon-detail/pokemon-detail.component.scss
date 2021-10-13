@@ -4,4 +4,32 @@
     width:30em;
     height:18em;
     background-color: rgba(0,0,0,0.5); 
+}
+
+.about-pokemon {
+    h4 {
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      justify-content: space-around;
+      .label {
+       text-align: end; 
+       color: #999;
+      }
+    }
+}
+
+@media (max-width: 768px) {
+  .about-pokemon {
+    h4 {
+      text-align: center;
+    }
+    .row {
+      text-align: center;
+      .label {
+        text-align: center;
+      }
+      }
+    }
   }

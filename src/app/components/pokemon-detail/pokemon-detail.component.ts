@@ -19,4 +19,8 @@ export class PokemonDetailComponent implements OnInit {
   getAbilities(): string {
     return this.pokemon.abilities.map(x => x.ability.name).join(', ');
   }
+
+  getTypes(): string {
+    return this.pokemon.types.map(x => x.type.name).join(', ');
+  }
 }
