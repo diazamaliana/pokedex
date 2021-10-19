@@ -11,6 +11,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PokemonFilterPipe } from './filter/pokemon-filter.pipe';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PokemonTypeComponent } from './components/pokemon-type/pokemon-type.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +24,19 @@ import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-deta
     HeaderComponent,
     PokemonComponent,
     PokemonCardComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    SearchBarComponent,
+    PokemonFilterPipe,
+    NotFoundComponent,
+    PokemonTypeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule
   ],
   providers: [],

@@ -1,0 +1,8 @@
+<div class="gallery col">
+    <div class="filter text-center">
+        <div class="types">
+            <a routerLink="/pokedex" class="btn btn-dark font-weight-bold rounded-pill mx-1 mt-1 mb-4" data-filter="all">All</a>
+            <button *ngFor="let type of pokemonTypes" class="btn btn-light font-weight-bold rounded-pill mx-1 mt-1 mb-4 type-{{type.name}}"  data-filter="hdpe">{{type.name | titlecase}}</button>
+        </div>
+    </div>
+</div>

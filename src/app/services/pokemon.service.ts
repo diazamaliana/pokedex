@@ -10,20 +10,28 @@ import { PokemonDetail } from '../models/pokemon-detail';
   providedIn: 'root'
 })
 export class PokemonService {
-  private url: string = environment.apiUrl + 'pokemon';
+  private pokeUrl: string = environment.apiUrl + 'pokemon';
+  private baseUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getAllPokemons(offset: number, limit: number = 24): Observable<PokemonList[]> {
-    const url = `${this.url}/?offset=` + offset + `&limit=` + limit;
+    const url = `${this.pokeUrl}/?offset=` + offset + `&limit=` + limit;
     return this.http.get<PokemonList[]>(url)
     .pipe(
-      map((x: any) => x.results)
+      map((res: any) => res.results)
     );
   }
 
   getPokemonDetail(id: number | string): Observable<PokemonDetail> {
-    const url = `${this.url}/` + id ;
+    const url = `${this.pokeUrl}/` + id ;
     return this.http.get<PokemonDetail>(url);
+  }
+
+  getPokemonTypes() {
+    const url = `${this.baseUrl}` + 'type' ;
+    return this.http.get<PokemonList[]>(url)
+    .pipe(
+      map((res: any) => res.results));
   }
 }
