@@ -1,0 +1,25 @@
+#not-found {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .container {
+        text-align: center;
+        margin-top: 3rem;
+
+        img {
+            width: 80%;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-weight: bolder;
+        }
+
+        h5 {
+            font-weight: lighter;
+            margin-bottom: 48px;
+        }
+    }
+  }
+ 
