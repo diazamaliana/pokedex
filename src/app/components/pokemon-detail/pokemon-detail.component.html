@@ -1,14 +1,14 @@
 <div class="modal-header">
-    <h4 class="modal-title">#0{{pokemon.id}} {{pokemon.name | titlecase}}</h4>
+    <h4 class="modal-title">{{ (pokemon.id > 9 ? '#0' : '#00' ) + pokemon.id }} {{pokemon.name | titlecase}}</h4>
     <button type="button" class="btn btn-outline-danger" (click)="activeModal.close('Close click')">Close</button>
 </div>
 <div class="modal-body">
     <div class="container">
 
         <div class="row">
-            <div class="col-md-4 ">
-                <div class="img-hero p-2">
-                    <img [src]="pokemon.sprites.other.dream_world.front_default" alt={{pokemon.name}} class="img-fluid card-img-top" style="height: 115px;">
+            <div class="col-md-4 align-items-center">
+                <div class="img-hero p-2 text-center">
+                    <img src="https://www.pkparaiso.com/imagenes/xy/sprites/animados/{{pokemon.name}}.gif" alt={{pokemon.name}} class="img-fluid img-thumbnail mx-auto" style="height: 115px;">
                 </div>
             </div>
             <div class="col-md-8 about-pokemon">
@@ -37,9 +37,9 @@
             <div class="stat-pokemon" *ngFor="let stat of pokemon.stats">
                 <div class="row">
                     <p class="col-md-4 my-1 text-muted">{{stat.stat.name | titlecase}}</p>
-                    <div class="col-md-8 my-1">
+                    <div class="col-md-8 my-1 align-self-center types">
                         <div class="progress" >
-                            <div class="progress-bar bg-info" role="progressbar" attr.aria-valuenow={{stat.base_stat}} aria-valuemin="0" aria-valuemax="100" [style.width.%]="stat.base_stat">
+                            <div class="progress-bar bg-info type-{{getTypes()}}" role="progressbar" attr.aria-valuenow={{stat.base_stat}} aria-valuemin="0" aria-valuemax="100" [style.width.%]="stat.base_stat">
                                 {{stat.base_stat}} %
                             </div>
                         </div>
